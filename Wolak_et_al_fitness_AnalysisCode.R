@@ -1,6 +1,6 @@
 # Data and code for **SEX-SPECIFIC ADDITIVE GENETIC VARIANCES AND CORRELATIONS FOR FITNESS IN A SONG SPARROW (MELOSPIZA MELODIA) POPULATION SUBJECT TO NATURAL IMMIGRATION AND INBREEDING**
 # [biorXiv](https://www.biorxiv.org/content/early/2018/02/26/272138)
-# Wolak, Arcese, Keller, & Reid 
+# Wolak, Arcese, Keller, Nietlisbach, & Reid 
 
 # These data come from the long-term song sparrow field study on Mandarte Island, BC, Canada.
 
@@ -30,7 +30,7 @@
 
 ################################################################################
 rm(list = ls())
-setwd("<<Insert correct path here>>") #FIXME
+setwd("~/Dropbox/AberdeenPostdoc/Fitness/fitnessMS/dryadGithub")#setwd("<<Insert correct path here>>")
 
 library(MCMCglmm)
 library(wolakR) #<-- install from GitHub with devtools: `devtools::install_github("matthewwolak/wolakR")`
@@ -85,7 +85,7 @@ fitMod <- MCMCglmm(fitness ~ sex-1 + sex:(f_coeff + immGG),
 	nitt = NITT, thin = THIN, burnin = BURN)
 
 # To run the above model in parallel MCMC chains, see code in the `hpc` repository
-## [e.g., hpc/TorqueMoab](https://github.com/matthewwolak/hpc/tree/master/TorqueMoab/R-MCMCglmm)
+## [hpc - TorqueMoab](https://github.com/matthewwolak/hpc/tree/master/TorqueMoab/R-MCMCglmm)
 ## Particularly the files: `parMCMC-R.sh` and `parMCMC_postProcess.R`
 
 
@@ -226,7 +226,7 @@ par(mfcol = c(1, 3), mar = c(8, 8, 2, 1), mgp = c(4,1.5,0), cex.lab = 2, cex.axi
 
 ################################################################################
 rm(list = ls())
-setwd("<<Insert correct path here>>") #FIXME
+setwd("~/Dropbox/AberdeenPostdoc/Fitness/fitnessMS/dryadGithub")#setwd("<<Insert correct path here>>")
 
 library(MCMCglmm)
 library(wolakR) #<-- install from GitHub with devtools: `devtools::install_github("matthewwolak/wolakR")`
@@ -299,7 +299,7 @@ fitcompMod <- MCMCglmm(cbind(femLRS, maleLRS, jSurv) ~ at.level(trait, 1:2)-1 + 
 
 
 # To run the above model in parallel MCMC chains, see code in the `hpc` repository
-## [e.g., hpc/TorqueMoab](https://github.com/matthewwolak/hpc/tree/master/TorqueMoab/R-MCMCglmm)
+## [hpc - TorqueMoab](https://github.com/matthewwolak/hpc/tree/master/TorqueMoab/R-MCMCglmm)
 ## Particularly the files: `parMCMC-R.sh` and `parMCMC_postProcess.R`
 
 
@@ -311,6 +311,20 @@ fitcompMod <- MCMCglmm(cbind(femLRS, maleLRS, jSurv) ~ at.level(trait, 1:2)-1 + 
 fitcompModCov <- fitcompMod
 fitcompMod$VCV[, c(2,3,6)] <- posterior.cor(fitcompMod$VCV[, 1:9])[, c(2,3,6)]
 fitcompMod$VCV[, c(11,12,15)] <- posterior.cor(fitcompMod$VCV[, 10:18])[, c(2,3,6)]
+
+
+
+
+###########################
+# Difference between female and male VA for LRS
+## Male - female
+VaLRSDiff <- with(triMod, VCV[,5]-VCV[,1])
+postTable(VaLRSDiff)
+
+# Difference between female and male inbreeding depression
+## Male - female
+fLRSDiff <- with(triMod, Sol[,6]-Sol[,5])
+postTable(fLRSDiff)
 
 
 
@@ -501,7 +515,7 @@ par(mfrow = c(2, 3), mar = c(9, 7, 2, 1), mgp = c(4.75,1.5,0), cex.lab = 2, cex.
 
 ################################################################################
 rm(list = ls())
-setwd("<<Insert correct path here>>") #FIXME
+setwd("~/Dropbox/AberdeenPostdoc/Fitness/fitnessMS/dryadGithub")#setwd("<<Insert correct path here>>")
 
 library(MCMCglmm)
 library(wolakR) #<-- install from GitHub with devtools: `devtools::install_github("matthewwolak/wolakR")`
@@ -549,7 +563,7 @@ arsMod <- MCMCglmm(ARS ~ sex-1 + sex:(ageCat + f_coeff + immGG),
 
 
 # To run the above model in parallel MCMC chains, see code in the `hpc` repository
-## [e.g., hpc/TorqueMoab](https://github.com/matthewwolak/hpc/tree/master/TorqueMoab/R-MCMCglmm)
+## [hpc - TorqueMoab](https://github.com/matthewwolak/hpc/tree/master/TorqueMoab/R-MCMCglmm)
 ## Particularly the files: `parMCMC-R.sh` and `parMCMC_postProcess.R`
 
 
@@ -564,6 +578,12 @@ arsMod$VCV[, 8] <- posterior.cor(arsMod$VCV[, 7:10])[, 2]
 
 
 
+
+###########################
+# Difference between female and male inbreeding depression
+## Male - female
+fARSDiff <- with(arsMod, Sol[,"sexMale:f"]-Sol[,"sexFemale:f"])
+postTable(fARSDiff)
 
 
 
@@ -725,7 +745,7 @@ oldparmar <- par()$mar
 
 ################################################################################
 rm(list = ls())
-setwd("<<Insert correct path here>>") #FIXME
+setwd("~/Dropbox/AberdeenPostdoc/Fitness/fitnessMS/dryadGithub")#setwd("<<Insert correct path here>>")
 
 library(MCMCglmm)
 library(wolakR) #<-- install from GitHub with devtools: `devtools::install_github("matthewwolak/wolakR")`
@@ -776,7 +796,7 @@ adSurvMod <- MCMCglmm(survive ~ sex-1 + ageCat + f_coeff + immGG,
 
 
 # To run the above model in parallel MCMC chains, see code in the `hpc` repository
-## [e.g., hpc/TorqueMoab](https://github.com/matthewwolak/hpc/tree/master/TorqueMoab/R-MCMCglmm)
+## [hpc - TorqueMoab](https://github.com/matthewwolak/hpc/tree/master/TorqueMoab/R-MCMCglmm)
 ## Particularly the files: `parMCMC-R.sh` and `parMCMC_postProcess.R`
 
 
