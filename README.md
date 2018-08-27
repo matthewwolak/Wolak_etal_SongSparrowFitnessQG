@@ -2,7 +2,7 @@
 
 ## Matthew E. Wolak, Peter Arcese, Lukas F. Keller, Pirmin Nietlisbach, & Jane M. Reid
 
-This repository contains a version controlled and editable source for the data and code used in the quantitative genetic analyses of Mandarte Island song sparrow fitness and fitness components that are the basis for the manuscript titled above, recently accepted at *Evolution*, and with a preprint available from [biorXiv](https://www.biorxiv.org/content/early/2018/02/26/272138) (doi: https://doi.org/10.1101/272138).
+This repository contains a version controlled and editable source for the data and code used in the quantitative genetic analyses of Mandarte Island song sparrow fitness and fitness components that are the basis for the manuscript titled above and published in *Evolution* (doi: [https://doi.org/10.1111/evo.13575)](https://onlinelibrary.wiley.com/doi/abs/10.1111/evo.13575).
 
 ### Data
 
