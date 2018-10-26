@@ -23,9 +23,8 @@ We would also appreciate it if you could let us know if you are intending to mak
 
 #### Data citation
 If you use the data, please cite the data package archived in the Dryad Data Repository: [https://doi.org/10.5061/dryad.p7p1jb3](https://doi.org/10.5061/dryad.p7p1jb3)
-```
-Wolak, M. E., P. Arcese, L. F. Keller, P. Nietlisbach, and J. M. Reid. 2018. Data from: Sex-specific additive genetic variances and correlations for fitness in a song sparrow (Melospiza melodia) population subject to natural immigration and inbreeding. Dryad Digital Repository. https://doi.org/10.5061/dryad.p7p1jb3.
-```
+
+<Wolak, M. E., P. Arcese, L. F. Keller, P. Nietlisbach, and J. M. Reid. 2018. Data from: Sex-specific additive genetic variances and correlations for fitness in a song sparrow (Melospiza melodia) population subject to natural immigration and inbreeding. Dryad Digital Repository. https://doi.org/10.5061/dryad.p7p1jb3.
 
 ## Changes
 
