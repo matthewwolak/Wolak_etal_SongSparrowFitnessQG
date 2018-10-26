@@ -1,8 +1,10 @@
 # Sex-specific additive genetic variances and correlations for fitness in a song sparrow (*Melospiza melodia*) population subject to natural immigration and inbreeding
 
+<a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/evo.13575"><img src="https://wol-prod-cdn.literatumonline.com/cms/attachment/b7ed2a3a-0759-4f65-929a-77d841df6700/evo.2018.72.issue-10.cover.jpg" alt="Evol. Cover 72:10" width="150"></a>
+
 ## Matthew E. Wolak, Peter Arcese, Lukas F. Keller, Pirmin Nietlisbach, & Jane M. Reid
 
-## *Evolution* 72(10): 2057-2075 [![]("./Wolak2018evo72issue10cover.gif")](https://onlinelibrary.wiley.com/doi/abs/10.1111/evo.13575)
+#### *Evolution* 72(10): 2057-2075 
 
 This repository contains a version controlled and editable source for the data and code used in the quantitative genetic analyses of Mandarte Island song sparrow fitness and fitness components that are the basis for the manuscript titled above and published in *Evolution* (doi: [https://doi.org/10.1111/evo.13575)](https://onlinelibrary.wiley.com/doi/abs/10.1111/evo.13575).
 
